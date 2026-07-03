@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Weather & Currency Bot
+After=network.target
+
+[Service]
+Type=simple
+# Укажите реальный путь к папке с ботом на вашем сервере:
+WorkingDirectory=/home/USERNAME/tgbot
+ExecStart=/home/USERNAME/tgbot/venv/bin/python /home/USERNAME/tgbot/bot.py
+Restart=always
+RestartSec=5
+EnvironmentFile=/home/USERNAME/tgbot/.env
+
+[Install]
+WantedBy=multi-user.target
